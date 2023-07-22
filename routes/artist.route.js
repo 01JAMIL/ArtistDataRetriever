@@ -1,8 +1,8 @@
 const express = require("express");
-const { searchArtist } = require("../controllers/artist.controller");
+const { searchArtistByName } = require("../controllers/artist.controller");
 
 const router = express.Router();
 
-router.post("/search", searchArtist);
+router.post("/search", searchArtistByName);
 
 module.exports = router;

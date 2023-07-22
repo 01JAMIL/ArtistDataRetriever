@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const artistRoutes = require("./routes/artist");
+const artistRoutes = require("./routes/artist.route");
 const artistFetchService = require("./services/artistFetchService");
 
 const app = express();

@@ -4,7 +4,7 @@ const csvWriterUtil = require("../utils/csvWriter");
 
 const apiKey = process.env.API_KEY;
 
-const searchArtist = async (artistName, filename) => {
+const searchArtist = async (artistName, fileName) => {
   let response = await axios.get(
     `https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${artistName}&api_key=${apiKey}&format=json`
   );
@@ -23,7 +23,7 @@ const searchArtist = async (artistName, filename) => {
       `https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${artistName}&api_key=${apiKey}&format=json`
     );
     attempts++;
-    filename = artistName; // Use the random artist name as the filename
+    fileName = artistName; // Use the random artist name as the filename
   }
 
   // If no results are found after maximum attempts, return an error
@@ -41,7 +41,7 @@ const searchArtist = async (artistName, filename) => {
   }));
 
   // Write to CSV
-  await csvWriterUtil.writeToCsv(filename, artists);
+  await csvWriterUtil.writeToCsv(fileName, artists);
 
   return "Successfully wrote to CSV file";
 };
