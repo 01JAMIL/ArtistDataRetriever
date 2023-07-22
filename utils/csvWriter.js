@@ -2,7 +2,7 @@ const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const fs = require("fs");
 const path = require("path");
 
-exports.writeToCsv = async (filename, data) => {
+exports.writeToCsv = async (fileName, data) => {
   // Create a 'generated' directory if it doesn't exist
   const dir = "./GeneratedArtistsCSVFiles";
   if (!fs.existsSync(dir)) {
@@ -11,7 +11,7 @@ exports.writeToCsv = async (filename, data) => {
 
   // Define the CSV writer
   const csvWriter = createCsvWriter({
-    path: path.join(dir, `${filename}.csv`), // Use the actual artist name as part of the filename
+    path: path.join(dir, `${fileName}.csv`), // Use the actual artist name as part of the fileName
     header: [
       { id: "name", title: "NAME" },
       { id: "mbid", title: "MBID" },
