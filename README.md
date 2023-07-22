@@ -61,6 +61,6 @@ To search for an artist, send a POST request to http://localhost:<YOUR_PORT_NUMB
   "artistName": "Cher",
   "fileName": "cher-results"
 }
-
-The application will generate a CSV file with the search results in the GeneratedArtistsCSVFiles directory.
 ```
+The application will generate a CSV file with the search results in the GeneratedArtistsCSVFiles directory.
+
